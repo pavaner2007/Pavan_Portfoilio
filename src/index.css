@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #020617;
+}
+
+.light body {
+  background: #f8fafc;
+}
+
+::selection {
+  background: rgba(14, 165, 233, 0.35);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.92);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0ea5e9, #8b5cf6);
+  border-radius: 999px;
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass-card {
+    @apply border border-white/10 bg-white/[0.06] shadow-premium backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.06];
+  }
+
+  .light .glass-card {
+    @apply border-slate-200/80 bg-white/80 shadow-xl;
+  }
+
+  .premium-gradient-text {
+    @apply bg-gradient-to-r from-sky-300 via-cyan-200 to-violet-300 bg-clip-text text-transparent;
+  }
+
+  .light .premium-gradient-text {
+    @apply from-sky-600 via-cyan-600 to-violet-700;
+  }
+
+  .pill {
+    @apply rounded-full border border-white/10 bg-white/[0.07] px-4 py-2 text-sm text-slate-200 backdrop-blur-xl transition hover:border-sky-300/50 hover:bg-sky-400/10;
+  }
+
+  .light .pill {
+    @apply border-slate-200 bg-white text-slate-700 hover:border-sky-400/50 hover:bg-sky-50;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-slate-300 transition hover:text-sky-300;
+  }
+
+  .light .nav-link {
+    @apply text-slate-600 hover:text-sky-600;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-500 via-cyan-500 to-violet-500 px-6 py-3 text-sm font-bold text-white shadow-glow transition hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(14,165,233,0.35)] focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 text-sm font-bold text-slate-100 backdrop-blur-xl transition hover:-translate-y-1 hover:border-sky-300/60 hover:bg-sky-400/10 focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950;
+  }
+
+  .light .secondary-button {
+    @apply border-slate-200 bg-white text-slate-800 hover:border-sky-400 hover:bg-sky-50 focus:ring-offset-white;
+  }
+
+  .muted-text {
+    @apply text-slate-400;
+  }
+
+  .light .muted-text {
+    @apply text-slate-600;
+  }
+}
