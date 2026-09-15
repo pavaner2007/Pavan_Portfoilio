@@ -82,11 +82,10 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
             <a
               href={personal.resume}
               download
-              className="hidden grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-slate-200 transition hover:-translate-y-0.5 hover:border-sky-300/60 hover:text-sky-300 light:border-slate-300 light:bg-slate-100 light:text-slate-700 md:grid"
+              className="hidden rounded-full border border-white/15 bg-white/5 px-3.5 py-2 text-sm font-bold text-slate-200 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-sky-300/60 hover:bg-sky-400/10 hover:text-sky-300 light:border-slate-300 light:bg-slate-100 light:text-slate-800 md:inline-flex md:items-center md:gap-2"
               title="Download Resume PDF"
-              aria-label="Download Resume"
             >
-              <Download size={16} />
+              <Download size={15} /> Download
             </a>
             <button
               type="button"
