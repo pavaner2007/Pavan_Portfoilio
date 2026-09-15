@@ -1,23 +1,31 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
+import { GitHubCalendar } from 'react-github-calendar'
 import { personal } from '../data/portfolio'
 import SectionHeading from './SectionHeading'
 
-const contributionWeeks = Array.from({ length: 52 }, (_, week) =>
-  Array.from({ length: 7 }, (_, day) => ({
-    id: `${week}-${day}`,
-    opacity: 0.12 + (((week * 7 + day) % 5) * 0.16)
-  }))
-)
-
 export default function Extras() {
+  const [isDark, setIsDark] = useState(true)
+
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsDark(!document.documentElement.classList.contains('light'))
+    }
+    checkTheme()
+
+    const observer = new MutationObserver(checkTheme)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="relative py-24">
+    <section id="activity" className="relative py-24">
       <div className="section-container relative z-10">
         <SectionHeading
           eyebrow="Activity & Consistency"
           title="GitHub Contributions"
-          description="Consistent open-source learning, daily project commits, and software engineering activity."
+          description="Live open-source contributions, daily project commits, and software engineering activity on GitHub."
         />
 
         <div className="mx-auto max-w-4xl">
@@ -52,27 +60,18 @@ export default function Extras() {
             </div>
 
             <div className="overflow-x-auto rounded-3xl border border-white/10 bg-white/[0.04] p-5 light:border-slate-200 light:bg-white">
-              <div className="flex min-w-[640px] justify-between gap-1">
-                {contributionWeeks.map((week, weekIndex) => (
-                  <div key={weekIndex} className="grid gap-1">
-                    {week.map((day) => (
-                      <span
-                        key={day.id}
-                        className="h-3 w-3 rounded-[3px] bg-emerald-400"
-                        style={{ opacity: day.opacity }}
-                      />
-                    ))}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400 light:text-slate-500">
-                <span>Less</span>
-                <div className="flex items-center gap-1">
-                  {[0.12, 0.28, 0.44, 0.60, 0.76].map((op, i) => (
-                    <span key={i} className="h-3 w-3 rounded-[3px] bg-emerald-400" style={{ opacity: op }} />
-                  ))}
-                </div>
-                <span>More</span>
+              <div className="flex min-w-[680px] justify-center py-2 text-slate-200 light:text-slate-800">
+                <GitHubCalendar
+                  username="pavaner2007"
+                  colorScheme={isDark ? 'dark' : 'light'}
+                  fontSize={13}
+                  blockSize={12}
+                  blockMargin={4}
+                  theme={{
+                    light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+                    dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
+                  }}
+                />
               </div>
             </div>
           </motion.article>
