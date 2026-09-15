@@ -4,7 +4,7 @@ export const personal = {
   role: 'Aspiring Full Stack Developer & Machine Learning Engineer',
   location: 'India',
   phone: '+91 6381612458',
-  email: 'eethamukkalaramadaspavan.2024aiml@sece.ac.in',
+  email: 'pavaner2007@gmail.com',
   linkedin: 'https://www.linkedin.com/in/pavan-e-r-969616327/',
   github: 'https://github.com/pavaner2007',
   resume: '/Pavan_E_R_Resume.pdf',
@@ -253,6 +253,5 @@ export const activities = [
 export const stats = [
   { label: 'Skill Rack Problems', value: 620, suffix: '+' },
   { label: 'LeetCode Problems', value: 100, suffix: '+' },
-  { label: 'CodeChef Problems', value: 55, suffix: '+' },
-  { label: 'Academic Score', value: 96.5, suffix: '%' }
+  { label: 'CodeChef Problems', value: 55, suffix: '+' }
 ]

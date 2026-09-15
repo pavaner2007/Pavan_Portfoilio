@@ -88,7 +88,7 @@ export default function Hero({ onOpenResume }: HeroProps) {
             <a href={`mailto:${personal.email}`} className="pill inline-flex items-center gap-2"><Mail size={16} /> Email</a>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="mt-8 grid grid-cols-3 gap-3">
             {stats.map((stat) => <StatCard key={stat.label} {...stat} />)}
           </div>
         </motion.div>
