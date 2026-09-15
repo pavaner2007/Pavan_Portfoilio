@@ -33,7 +33,7 @@ export const education = [
     institution: 'Sri Eshwar College of Engineering',
     degree: 'B.E. Computer Science and Engineering (Artificial Intelligence & Machine Learning)',
     duration: '2024 - 2028',
-    score: 'CGPA: 7.6 (III Semester)',
+    score: 'CGPA: 7.8 (IV Semester)',
     coursework: ['Data Structures', 'Database Management Systems', 'Object-Oriented Programming', 'AI/ML Fundamentals', 'Software Development']
   },
   {
