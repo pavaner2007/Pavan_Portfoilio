@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown, Download, Mail, MapPin, Phone, Sparkles } from 'lucide-react'
+import { ArrowDown, Download, Eye, Mail, MapPin, Phone, Sparkles } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { personal, roles, stats } from '../data/portfolio'
 import AnimatedCounter from './AnimatedCounter'
@@ -43,7 +43,11 @@ function StatCard({ value, label, suffix }: { value: number; label: string; suff
   )
 }
 
-export default function Hero() {
+interface HeroProps {
+  onOpenResume?: () => void
+}
+
+export default function Hero({ onOpenResume }: HeroProps) {
   const typed = useTyping(roles)
 
   return (
@@ -62,8 +66,15 @@ export default function Hero() {
           </div>
           <p className="muted-text mt-6 max-w-3xl text-base leading-8 sm:text-lg">{personal.objective}</p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a href={personal.resume} download className="primary-button">
+          <div className="mt-8 flex flex-wrap gap-4">
+            <button
+              type="button"
+              onClick={onOpenResume}
+              className="primary-button cursor-pointer"
+            >
+              <Eye size={18} /> View Resume
+            </button>
+            <a href={personal.resume} download className="secondary-button">
               <Download size={18} /> Download Resume
             </a>
             <a href="#contact" className="secondary-button">

@@ -12,16 +12,22 @@ import LoadingScreen from './components/LoadingScreen'
 import Navbar from './components/Navbar'
 import ParticleBackground from './components/ParticleBackground'
 import Projects from './components/Projects'
+import ResumeModal from './components/ResumeModal'
 import ScrollProgress from './components/ScrollProgress'
 import Skills from './components/Skills'
+import { personal } from './data/portfolio'
 
 export default function App() {
   const [loading, setLoading] = useState(true)
+  const [isResumeOpen, setIsResumeOpen] = useState(false)
 
   useEffect(() => {
     const timeout = window.setTimeout(() => setLoading(false), 900)
     return () => window.clearTimeout(timeout)
   }, [])
+
+  const handleOpenResume = () => setIsResumeOpen(true)
+  const handleCloseResume = () => setIsResumeOpen(false)
 
   return (
     <div className="min-h-screen bg-slate-950 font-sans text-slate-100 transition-colors duration-300 light:bg-slate-50 light:text-slate-900">
@@ -30,9 +36,9 @@ export default function App() {
       </AnimatePresence>
       <ScrollProgress />
       <ParticleBackground />
-      <Navbar />
+      <Navbar onOpenResume={handleOpenResume} />
       <main>
-        <Hero />
+        <Hero onOpenResume={handleOpenResume} />
         <About />
         <Skills />
         <Projects />
@@ -43,6 +49,11 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={handleCloseResume}
+        resumeUrl={personal.resume}
+      />
     </div>
   )
 }

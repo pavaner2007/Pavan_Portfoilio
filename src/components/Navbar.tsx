@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Download, Menu, Moon, Sun, X } from 'lucide-react'
+import { Download, Eye, Menu, Moon, Sun, X } from 'lucide-react'
 import { personal } from '../data/portfolio'
 
 const navItems = [
@@ -12,7 +12,11 @@ const navItems = [
   { label: 'Contact', href: '#contact' }
 ]
 
-export default function Navbar() {
+interface NavbarProps {
+  onOpenResume?: () => void
+}
+
+export default function Navbar({ onOpenResume }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isDark, setIsDark] = useState(true)
   const [scrolled, setScrolled] = useState(false)
@@ -68,8 +72,21 @@ export default function Navbar() {
             >
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
-            <a href={personal.resume} download className="hidden rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-100 light:bg-slate-950 light:text-white md:inline-flex md:items-center md:gap-2">
-              <Download size={16} /> Resume
+            <button
+              type="button"
+              onClick={onOpenResume}
+              className="hidden rounded-full bg-gradient-to-r from-sky-500 to-violet-500 px-4 py-2 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:opacity-95 md:inline-flex md:items-center md:gap-2"
+            >
+              <Eye size={16} /> View Resume
+            </button>
+            <a
+              href={personal.resume}
+              download
+              className="hidden grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-slate-200 transition hover:-translate-y-0.5 hover:border-sky-300/60 hover:text-sky-300 light:border-slate-300 light:bg-slate-100 light:text-slate-700 md:grid"
+              title="Download Resume PDF"
+              aria-label="Download Resume"
+            >
+              <Download size={16} />
             </a>
             <button
               type="button"
@@ -97,9 +114,21 @@ export default function Navbar() {
                   {item.label}
                 </a>
               ))}
-              <a href={personal.resume} download className="primary-button mt-3 w-full">
-                <Download size={16} /> Download Resume
-              </a>
+              <div className="mt-3 flex flex-col gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeMenu()
+                    onOpenResume?.()
+                  }}
+                  className="primary-button w-full"
+                >
+                  <Eye size={16} /> View Resume
+                </button>
+                <a href={personal.resume} download className="secondary-button w-full">
+                  <Download size={16} /> Download Resume
+                </a>
+              </div>
             </div>
           </motion.div>
         ) : null}
