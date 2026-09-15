@@ -216,7 +216,7 @@ export const certifications = [
 export const codingProfiles = [
   {
     platform: 'LeetCode',
-    stats: 'Solved 55+ Problems | Global Rank - 2,311,804',
+    stats: 'Solved 100+ Problems | Global Rank - 2,311,804',
     url: 'https://leetcode.com/u/Pavan_E_R/'
   },
   {
@@ -252,7 +252,7 @@ export const activities = [
 
 export const stats = [
   { label: 'Skill Rack Problems', value: 620, suffix: '+' },
-  { label: 'LeetCode Problems', value: 55, suffix: '+' },
+  { label: 'LeetCode Problems', value: 100, suffix: '+' },
   { label: 'CodeChef Problems', value: 55, suffix: '+' },
   { label: 'Academic Score', value: 96.5, suffix: '%' }
 ]
