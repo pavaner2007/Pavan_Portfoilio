@@ -28,9 +28,10 @@ export default function Extras() {
           description="Live open-source contributions, daily project commits, and software engineering activity on GitHub."
         />
 
-        <div className="mx-auto max-w-4xl">
+        <div className="relative mx-auto max-w-4xl">
+          <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-sky-500/15 blur-2xl" aria-hidden="true" />
           <motion.article
-            className="glass-card rounded-[2rem] p-6 sm:p-8"
+            className="glass-card relative rounded-[2rem] p-6 sm:p-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
@@ -59,17 +60,18 @@ export default function Extras() {
               </a>
             </div>
 
-            <div className="overflow-x-auto rounded-3xl border border-white/10 bg-white/[0.04] p-5 light:border-slate-200 light:bg-white">
+            <div className="overflow-x-auto rounded-3xl border border-white/10 bg-white/[0.04] p-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden light:border-slate-200 light:bg-white">
               <div className="flex min-w-[680px] justify-center py-2 text-slate-200 light:text-slate-800">
                 <GitHubCalendar
                   username="pavaner2007"
                   colorScheme={isDark ? 'dark' : 'light'}
                   fontSize={13}
-                  blockSize={12}
+                  blockSize={13}
                   blockMargin={4}
+                  blockRadius={3}
                   theme={{
-                    light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
-                    dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
+                    light: ['#e2e8f0', '#a7f3d0', '#34d399', '#059669', '#047857'],
+                    dark: ['#1e293b', '#047857', '#10b981', '#34d399', '#6ee7b7']
                   }}
                 />
               </div>
