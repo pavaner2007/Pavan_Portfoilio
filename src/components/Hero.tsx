@@ -36,9 +36,13 @@ function useTyping(words: string[]) {
 
 function StatCard({ value, label, suffix }: { value: number; label: string; suffix: string }) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-4 text-center backdrop-blur-xl light:border-slate-200 light:bg-white">
-      <p className="font-display text-2xl font-bold text-white light:text-slate-950"><AnimatedCounter value={value} suffix={suffix} /></p>
-      <p className="mt-1 text-xs uppercase tracking-widest text-slate-400 light:text-slate-500">{label}</p>
+    <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] px-3 py-3.5 text-center backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-sky-300/40 light:border-slate-200 light:bg-white">
+      <p className="font-display text-2xl font-bold text-white light:text-slate-950 sm:text-3xl">
+        <AnimatedCounter value={value} suffix={suffix} />
+      </p>
+      <p className="mt-1 text-[11px] font-semibold tracking-wider text-slate-400 light:text-slate-500 sm:text-xs">
+        {label}
+      </p>
     </div>
   )
 }
@@ -53,7 +57,7 @@ export default function Hero({ onOpenResume }: HeroProps) {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden pt-32 sm:pt-36">
       <div className="absolute inset-0 bg-hero-grid bg-[size:72px_72px] opacity-40" aria-hidden="true" />
-      <div className="section-container relative z-10 grid min-h-[calc(100vh-9rem)] items-center gap-12 pb-20 lg:grid-cols-[1.08fr_0.92fr]">
+      <div className="section-container relative z-10 grid min-h-[calc(100vh-9rem)] items-center gap-12 pb-28 sm:pb-32 lg:grid-cols-[1.08fr_0.92fr]">
         <motion.div initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <div className="pill mb-6 inline-flex items-center gap-2">
             <Sparkles size={16} className="text-sky-300" /> Open to internships, hackathons, and developer roles
@@ -66,7 +70,7 @@ export default function Hero({ onOpenResume }: HeroProps) {
           </div>
           <p className="muted-text mt-6 max-w-3xl text-base leading-8 sm:text-lg">{personal.objective}</p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <button
               type="button"
               onClick={onOpenResume}
@@ -82,13 +86,13 @@ export default function Hero({ onOpenResume }: HeroProps) {
             </a>
           </div>
 
-          <div className="mt-7 flex flex-wrap items-center gap-3">
+          <div className="mt-5 flex flex-wrap items-center gap-2.5">
             <a href={personal.github} target="_blank" rel="noreferrer" className="pill inline-flex items-center gap-2"><FaGithub /> GitHub</a>
             <a href={personal.linkedin} target="_blank" rel="noreferrer" className="pill inline-flex items-center gap-2"><FaLinkedin /> LinkedIn</a>
             <a href={`mailto:${personal.email}`} className="pill inline-flex items-center gap-2"><Mail size={16} /> Email</a>
           </div>
 
-          <div className="mt-8 grid grid-cols-3 gap-3">
+          <div className="mt-8 grid max-w-xl grid-cols-3 gap-3">
             {stats.map((stat) => <StatCard key={stat.label} {...stat} />)}
           </div>
         </motion.div>
@@ -116,7 +120,7 @@ export default function Hero({ onOpenResume }: HeroProps) {
         </motion.div>
       </div>
 
-      <a href="#about" aria-label="Scroll to about section" className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-white/5 p-3 text-slate-300 backdrop-blur-xl transition hover:text-sky-300 light:border-slate-200 light:bg-white light:text-slate-700">
+      <a href="#about" aria-label="Scroll to about section" className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-white/5 p-3 text-slate-300 backdrop-blur-xl transition hover:border-sky-400/50 hover:text-sky-300 light:border-slate-200 light:bg-white light:text-slate-700 sm:bottom-6">
         <ArrowDown className="animate-bounce" size={20} />
       </a>
     </section>
