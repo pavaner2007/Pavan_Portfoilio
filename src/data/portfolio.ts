@@ -168,18 +168,27 @@ export const projects = [
     type: 'AI'
   },
   {
-    title: 'Credit Card Fraud Detection',
-    category: 'Machine Learning',
+    title: 'Cortex Gateway',
+    category: 'AI Infrastructure',
     description:
-      'Machine learning project for detecting fraudulent transactions using predictive models, data preprocessing, and analytical evaluation.',
+      'Intelligent Multi-LLM gateway that unifies Ollama, Gemini, and Groq behind a single API, with intelligent model routing, reliability, usage control, and observability.',
     longDescription:
-      'Focuses on classification workflows, model training, feature analysis, and evaluation metrics for identifying suspicious financial transactions.',
-    tech: ['Python', 'Machine Learning', 'Data Analysis', 'Classification Models', 'Jupyter Notebook'],
-    features: ['Fraud classification', 'Data preprocessing', 'Model evaluation', 'Predictive analytics', 'Transaction risk detection'],
+      'Designed as a production-oriented AI infrastructure platform for multi-provider LLM access, automatic failover, team-based governance, cost management, and real-time operational visibility.',
+    tech: ['FastAPI', 'React', 'PostgreSQL', 'Redis', 'Ollama', 'Gemini', 'Groq', 'Docker'],
+    features: [
+      'Unified Multi-LLM API',
+      'Intelligent provider & model routing',
+      'Automatic retry & failover',
+      'Circuit breaker & reliability controls',
+      'Team-based authentication & RBAC',
+      'Rate limiting & budget management',
+      'Cost & usage tracking',
+      'Prometheus & OpenTelemetry observability'
+    ],
     github: '',
     live: '',
-    status: 'Add Project Link',
-    type: 'ML'
+    status: 'Project Available',
+    type: 'AI'
   }
 ]
 
