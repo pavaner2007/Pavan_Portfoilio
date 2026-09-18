@@ -69,25 +69,27 @@ export default function Projects() {
               </div>
 
               <div className="p-6 sm:p-7">
-                <h3 className="font-display text-2xl font-bold text-white light:text-slate-950">{project.title}</h3>
-                <p className="muted-text mt-3 leading-7">{project.description}</p>
-                <p className="muted-text mt-3 text-sm leading-7">{project.longDescription}</p>
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-white light:text-slate-950">{project.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-slate-300 light:text-slate-700">{project.description}</p>
+                <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-slate-400 light:text-slate-500">{project.longDescription}</p>
 
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-100 light:border-cyan-500/20 light:bg-cyan-50 light:text-cyan-700">
+                    <span key={tech} className="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-2.5 py-1 text-[11px] font-semibold text-cyan-100 light:border-cyan-500/20 light:bg-cyan-50 light:text-cyan-700">
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-6 rounded-3xl border border-white/10 bg-white/[0.04] p-4 light:border-slate-200 light:bg-slate-50">
-                  <p className="mb-3 flex items-center gap-2 text-sm font-bold text-white light:text-slate-950"><Rocket size={16} className="text-sky-300" /> Key Features</p>
-                  <ul className="grid gap-2 text-sm text-slate-300 light:text-slate-700 sm:grid-cols-2">
+                <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4 light:border-slate-200 light:bg-slate-50">
+                  <p className="mb-2.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-300 light:text-sky-700">
+                    <Rocket size={14} /> Key Features
+                  </p>
+                  <ul className="grid gap-2 text-xs sm:text-[13px] text-slate-300 light:text-slate-600 sm:grid-cols-2">
                     {project.features.map((feature) => (
-                      <li key={feature} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-300" />
-                        <span>{feature}</span>
+                      <li key={feature} className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
+                        <span className="leading-snug">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -95,21 +97,21 @@ export default function Projects() {
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   {project.github ? (
-                    <a href={project.github} target="_blank" rel="noreferrer" className="secondary-button flex-1">
-                      <Github size={18} /> GitHub
+                    <a href={project.github} target="_blank" rel="noreferrer" className="secondary-button flex-1 py-2.5 text-sm">
+                      <Github size={16} /> GitHub
                     </a>
                   ) : (
-                    <button type="button" disabled className="secondary-button flex-1 cursor-not-allowed opacity-50">
-                      <Github size={18} /> GitHub Pending
+                    <button type="button" disabled className="secondary-button flex-1 cursor-not-allowed py-2.5 text-sm opacity-50">
+                      <Github size={16} /> GitHub Pending
                     </button>
                   )}
                   {project.live ? (
-                    <a href={project.live} target="_blank" rel="noreferrer" className="primary-button flex-1">
-                      <ExternalLink size={18} /> Live Demo
+                    <a href={project.live} target="_blank" rel="noreferrer" className="primary-button flex-1 py-2.5 text-sm">
+                      <ExternalLink size={16} /> Live Demo
                     </a>
                   ) : (
-                    <button type="button" disabled className="primary-button flex-1 cursor-not-allowed opacity-50">
-                      <Search size={18} /> Demo Pending
+                    <button type="button" disabled className="primary-button flex-1 cursor-not-allowed py-2.5 text-sm opacity-50">
+                      <Search size={16} /> Demo Pending
                     </button>
                   )}
                 </div>
