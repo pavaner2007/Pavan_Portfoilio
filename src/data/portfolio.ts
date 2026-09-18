@@ -7,7 +7,7 @@ export const personal = {
   email: 'pavaner2007@gmail.com',
   linkedin: 'https://www.linkedin.com/in/pavan-e-r-969616327/',
   github: 'https://github.com/pavaner2007',
-  resume: '/Pavan_E_R_Resume.pdf',
+  resume: '/Pavan_Resume_removed.pdf',
   objective:
     "Aspiring Full Stack Developer and Machine Learning Engineer pursuing a Bachelor's degree in Engineering, with a strong foundation in software development, data structures, and AI/ML technologies. Passionate about designing scalable web applications and intelligent systems that solve real-world problems.",
   summary:
@@ -189,6 +189,12 @@ export const achievements = [
     organizer: 'District Collectorate of Chittoor',
     year: '2026',
     description: 'Recognized as a Top 6 finalist for developing an innovative technology solution during Hackathon 2026.'
+  },
+  {
+    title: 'Top 10 of 386 Teams - Learnify GenAI Challenge',
+    organizer: 'Unsaid Talks',
+    year: '2025',
+    description: 'Secured Top 10 rank among 386 competing teams in the Unsaid Talks Learnify GenAI Challenge.'
   }
 ]
 
