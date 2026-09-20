@@ -28,7 +28,7 @@ export default function Extras() {
           description="Live open-source contributions, daily project commits, and software engineering activity on GitHub."
         />
 
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto max-w-5xl">
           <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-sky-500/15 blur-2xl" aria-hidden="true" />
           <motion.article
             className="glass-card relative rounded-[2rem] p-6 sm:p-8"
@@ -60,14 +60,14 @@ export default function Extras() {
               </a>
             </div>
 
-            <div className="overflow-x-auto rounded-3xl border border-white/10 bg-white/[0.04] p-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden light:border-slate-200 light:bg-white">
-              <div className="flex min-w-[680px] justify-center py-2 text-slate-200 light:text-slate-800">
+            <div className="no-scrollbar overflow-x-auto rounded-3xl border border-white/10 bg-white/[0.04] p-4 sm:p-6 light:border-slate-200 light:bg-white">
+              <div className="flex w-full justify-center text-slate-200 light:text-slate-800 [&_.react-activity-calendar]:w-full [&_svg]:max-w-full [&_svg]:h-auto">
                 <GitHubCalendar
                   username="pavaner2007"
                   colorScheme={isDark ? 'dark' : 'light'}
-                  fontSize={13}
-                  blockSize={13}
-                  blockMargin={4}
+                  fontSize={12}
+                  blockSize={11}
+                  blockMargin={3.5}
                   blockRadius={3}
                   theme={{
                     light: ['#e2e8f0', '#a7f3d0', '#34d399', '#059669', '#047857'],
