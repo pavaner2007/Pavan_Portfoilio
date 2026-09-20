@@ -231,7 +231,7 @@ export const certifications = [
 export const codingProfiles = [
   {
     platform: 'LeetCode',
-    stats: 'Solved 100+ Problems | Global Rank - 2,311,804',
+    stats: 'Solved 100+ Problems | Global Rank - 1,591,391',
     url: 'https://leetcode.com/u/Pavan_E_R/'
   },
   {
